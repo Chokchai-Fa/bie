@@ -1,0 +1,959 @@
+{
+	"info": {
+		"_postman_id": "3c55eece-b3d1-4fcc-b2ff-2941b0cfea01",
+		"name": "be-fastmath",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28505873"
+	},
+	"item": [
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "createQuestion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"question_flag\": \"E\",\n    \"min_diffculty\": \"elementary123\",\n    \"question\": \"1 2 3 4 5\",\n    \"question_result\": \"15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fastmath/question/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"question",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateQuestion",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"question_id\": 1,\n    \"question_flag\": \"E\",\n    \"min_diffculty\": \"elementary123\",\n    \"question\": \"1 2 3 4 5\",\n    \"question_result\": \"15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fastmath/question/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"question",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteQuestion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"question_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fastmath/question/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"question",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getQuestion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fastmath/question/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"question",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getQuestionByRandom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fastmath/question/random",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"question",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getQuestionRandomByMinDifficult",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fastmath/question/random/difficulty?min_difficulty=elementary123&question_flag=F",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"question",
+								"random",
+								"difficulty"
+							],
+							"query": [
+								{
+									"key": "min_difficulty",
+									"value": "elementary123"
+								},
+								{
+									"key": "question_flag",
+									"value": "F"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Solution",
+			"item": [
+				{
+					"name": "getSolutionByQuestionID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fastmath/solution/question/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"solution",
+								"question",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createSolution",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"question_id\": 1,\n    \"solution_result\": \"15\",\n    \"solution_score\": 90,\n    \"diffculty_code\": \"elementary123\",\n    \"solution\": \"abc\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fastmath/solution/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"solution",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSolution",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"solution_id\":1,\n    \"question_id\": 1,\n    \"solution_result\": \"15\",\n    \"solution_score\": 90,\n    \"diffculty_code\": \"elementary123\",\n    \"solution\": \"abc\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fastmath/solution/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"solution",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSolution",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"solution_id\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fastmath/solution/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"solution",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"chokchai.fa@outlook.com\",\n    \"password\": \"@Phukao98765\",\n    \"full_name\": \"TestSignup\"\n  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fastmath/user/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"user",
+								"signup"
+							],
+							"query": [
+								{
+									"key": "activation_token",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"chokchai.fa@outlook.com\",\n    \"password\": \"@Phukao98765\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fastmath/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "sdsd",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "dsd",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activateUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastmath/user/activate?email=chokchai.fa@outlook.com&token=79ee3bf2-b932-411e-b7dc-a6d18e270a77",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"user",
+								"activate"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "chokchai.fa@outlook.com"
+								},
+								{
+									"key": "token",
+									"value": "79ee3bf2-b932-411e-b7dc-a6d18e270a77"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resendActivationEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastmath/user/activate/resend?email=chokchai.fa@outlook.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"user",
+								"activate",
+								"resend"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "chokchai.fa@outlook.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgetPassword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fastmath/user/forget_password/request?email=chokchai.fa@outlook.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"user",
+								"forget_password",
+								"request"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "chokchai.fa@outlook.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createNewPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"password\": \"@Phukao98765\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fastmath/user/forget_password/create?email=chokchai.fa@outlook.com&token=20a21e70-3558-4697-9c0f-08f2e9ae5b54",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"user",
+								"forget_password",
+								"create"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "chokchai.fa@outlook.com"
+								},
+								{
+									"key": "token",
+									"value": "20a21e70-3558-4697-9c0f-08f2e9ae5b54"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "facebookLogin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fastmath/user/login/facebook",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastmath",
+								"user",
+								"login",
+								"facebook"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SubScription",
+			"item": [
+				{
+					"name": "promtpay",
+					"item": [
+						{
+							"name": "promptPaySubScribe",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNjg3NmI0LTc5NzUtNDc1Ni05ZjI2LWMwODI2ZDFkY2MwYSIsInVzZXJuYW1lIjoiY2hva2NoYWkuZmFAb3V0bG9vay5jb20iLCJpc3N1ZWRfYXQiOiIyMDIzLTEyLTIwVDE2OjE3OjMwLjQ4NTU2NCswNzowMCIsImV4cGlyZWRfYXQiOiIyMDIzLTEyLTIwVDE2OjMyOjMwLjQ4NTU2NCswNzowMCJ9.eYQe8hmwMG-iELBG6eennqP4JPohMNXyCh6sIDhR-ZM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"chokchai.fa@outlook.com\",\n    \"source\":\"src_test_5y5r8rlkx75pk4g2ki8\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/fastmath/subscription/promptpay",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fastmath",
+										"subscription",
+										"promptpay"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createSource",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "pkey_test_5xs3kywnp4fz7i5bh2d",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "amount",
+											"value": "34900",
+											"type": "text"
+										},
+										{
+											"key": "currency",
+											"value": "THB",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "promptpay",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "chokchai.fa@outlook.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.omise.co/sources",
+									"protocol": "https",
+									"host": [
+										"api",
+										"omise",
+										"co"
+									],
+									"path": [
+										"sources"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "credit_card",
+					"item": [
+						{
+							"name": "creditCardSubScription",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAyOTNkMWMyLTRjOTItNDE0NC05Mjk0LTEyZTRlNzEwNmY5NyIsInVzZXJuYW1lIjoiY2hva2NoYWkuZmFAb3V0bG9vay5jb20iLCJpc3N1ZWRfYXQiOiIyMDIzLTEyLTI3VDE0OjQ2OjMxLjY0MzI4MyswNzowMCIsImV4cGlyZWRfYXQiOiIyMDIzLTEyLTI3VDE1OjAxOjMxLjY0MzI4MyswNzowMCJ9.jtXxk6BdpgvuT-lWnC7at49kNg_p41wdlD8tMvgpBu0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"chokchai.fa@outlook.com\",\n    \"token\":\"tokn_test_5y890fk84lyoth7ne5u\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/fastmath/subscription/creditcard",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fastmath",
+										"subscription",
+										"creditcard"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createToken",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "pkey_test_5xs3kywnp4fz7i5bh2d",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "card[name]",
+											"value": "Chokchai Faroongsarng",
+											"type": "text"
+										},
+										{
+											"key": "card[number]",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "card[expiration_month]",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "card[expiration_year]",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "card[city]",
+											"value": "Bangkok",
+											"type": "text"
+										},
+										{
+											"key": "card[postal_code]",
+											"value": "10120",
+											"type": "text"
+										},
+										{
+											"key": "card[security_code]",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://vault.omise.co/tokens",
+									"protocol": "https",
+									"host": [
+										"vault",
+										"omise",
+										"co"
+									],
+									"path": [
+										"tokens"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCreditCard",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "skey_test_5xs3kyxfm6jpcob5l6s",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.omise.co/customers/cust_test_5y88be644w4ja8238ql/cards",
+									"protocol": "https",
+									"host": [
+										"api",
+										"omise",
+										"co"
+									],
+									"path": [
+										"customers",
+										"cust_test_5y88be644w4ja8238ql",
+										"cards"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCreditCardList",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0MTUxZWM1LWZjYjktNDcxZC04MjlmLWI3OGZlN2E4MTUzNCIsInVzZXJuYW1lIjoiY2hva2NoYWkuZmFAb3V0bG9vay5jb20iLCJpc3N1ZWRfYXQiOiIyMDIzLTEyLTI3VDEzOjAyOjIyLjc0OTY0NiswNzowMCIsImV4cGlyZWRfYXQiOiIyMDIzLTEyLTI3VDEzOjE3OjIyLjc0OTY0NyswNzowMCJ9.nVO-d97NI5ePhG9R1r1ICkRIuktvHiinpOutD4lin9U",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/fastmath/subscription/creditcard/chokchai.fa@outlook.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fastmath",
+										"subscription",
+										"creditcard",
+										"chokchai.fa@outlook.com"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCreditCard",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0MTUxZWM1LWZjYjktNDcxZC04MjlmLWI3OGZlN2E4MTUzNCIsInVzZXJuYW1lIjoiY2hva2NoYWkuZmFAb3V0bG9vay5jb20iLCJpc3N1ZWRfYXQiOiIyMDIzLTEyLTI3VDEzOjAyOjIyLjc0OTY0NiswNzowMCIsImV4cGlyZWRfYXQiOiIyMDIzLTEyLTI3VDEzOjE3OjIyLjc0OTY0NyswNzowMCJ9.nVO-d97NI5ePhG9R1r1ICkRIuktvHiinpOutD4lin9U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"chokchai.fa@outlook.com\",\n    \"card_id\": \"card_test_5y88bcrsa3iedfpeql2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/fastmath/subscription/creditcard/delete",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fastmath",
+										"subscription",
+										"creditcard",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cancelSubScription",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0NmU0OTJlLTZhNzUtNDE5ZC1hMmVjLWJmZTI2OWRkMmM5MCIsInVzZXJuYW1lIjoiY2hva2NoYWkuZmFAb3V0bG9vay5jb20iLCJpc3N1ZWRfYXQiOiIyMDIzLTEyLTI3VDE0OjM4OjIwLjY3Mzg4NSswNzowMCIsImV4cGlyZWRfYXQiOiIyMDIzLTEyLTI3VDE0OjUzOjIwLjY3Mzg4NSswNzowMCJ9.1vMEjtDNdKed1v6u8Nh9Fr_56D8YSxAM5wUj16rC8WU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"chokchai.fa@outlook.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/fastmath/subscription/cancle",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fastmath",
+										"subscription",
+										"cancle"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addNewCard",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3MjE3YjQzLTQ0OWUtNGMyYy1hOTU4LTc4MTE1NGRmYTJhNSIsInVzZXJuYW1lIjoiY2hva2NoYWkuZmFAb3V0bG9vay5jb20iLCJpc3N1ZWRfYXQiOiIyMDIzLTEyLTI3VDE2OjM4OjMzLjc0OTQ2NyswNzowMCIsImV4cGlyZWRfYXQiOiIyMDIzLTEyLTI3VDE2OjUzOjMzLjc0OTQ2OCswNzowMCJ9.-iI1tS0rQbmfpRPCRlLqbh5eJ24_c4Unn70icFy8r2g",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"chokchai.fa@outlook.com\",\n    \"token\":\"tokn_test_5y8hzsl5xnw9f2t1l3w\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/fastmath/subscription/creditcard/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fastmath",
+										"subscription",
+										"creditcard",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeCardDefault",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3MjE3YjQzLTQ0OWUtNGMyYy1hOTU4LTc4MTE1NGRmYTJhNSIsInVzZXJuYW1lIjoiY2hva2NoYWkuZmFAb3V0bG9vay5jb20iLCJpc3N1ZWRfYXQiOiIyMDIzLTEyLTI3VDE2OjM4OjMzLjc0OTQ2NyswNzowMCIsImV4cGlyZWRfYXQiOiIyMDIzLTEyLTI3VDE2OjUzOjMzLjc0OTQ2OCswNzowMCJ9.-iI1tS0rQbmfpRPCRlLqbh5eJ24_c4Unn70icFy8r2g",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"chokchai.fa@outlook.com\",\n    \"card_id\": \"card_test_5y8hzsl4tf9a2z5xhd1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/fastmath/subscription/creditcard/change_default",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fastmath",
+										"subscription",
+										"creditcard",
+										"change_default"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
